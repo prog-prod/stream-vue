@@ -14,7 +14,6 @@ declare global {
   }
 }
 
-
 export type Events =
   /**
    * Sent when playback is aborted; for example, if the media is playing and is restarted from the beginning, this event is sent.
@@ -125,10 +124,10 @@ export const VideoStream = defineComponent({
     loop: { type: Boolean, default: false },
     preload: {
       type: [String, Boolean] as unknown as () =>
-          | 'auto'
-          | 'metadata'
-          | 'none'
-          | boolean,
+        | 'auto'
+        | 'metadata'
+        | 'none'
+        | boolean,
     },
     volume: { type: Number, default: 1 },
   },
@@ -186,7 +185,7 @@ export const VideoStream = defineComponent({
   methods: {
     updateProp(key: string, value: any) {
       if (!this.$refs.stream) return
-          ;(this.$refs.stream as any)[key] = value
+      ;(this.$refs.stream as any)[key] = value
     },
   },
 })
